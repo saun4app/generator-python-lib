@@ -18,7 +18,7 @@
   "scripts": {
     "build": "gulp",
     "cobertura": "gulp coverage:cobertura",
-    "test": "mocha"
+    "test": "gulp test:unit"
   },
   "version": "0.0.0",
   "dependencies": {
