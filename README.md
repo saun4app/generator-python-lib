@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/hbetts/generator-python-library.svg?branch=master)](https://travis-ci.org/hbetts/generator-python-library)
 [![Dependency Status](https://david-dm.org/hbetts/generator-python-library.svg)](https://david-dm.org/hbetts/generator-python-library)
+[![devDependency Status](https://david-dm.org/hbetts/generator-python-library/dev-status.svg)](https://david-dm.org/hbetts/generator-python-library#info=devDependencies)
+[![peerDependency Status](https://david-dm.org/hbetts/generator-python-library/peer-status.svg)](https://david-dm.org/hbetts/generator-python-library#info=peerDependencies)
 
 > Generator for boostrapping a Python library
 
