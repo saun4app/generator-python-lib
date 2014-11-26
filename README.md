@@ -1,6 +1,6 @@
 # generator-python-library
 
-[![Build Status](https://secure.travis-ci.org/hbetts/generator-python-library.png?branch=master)](https://travis-ci.org/hbetts/generator-python-library)
+[![Build Status](https://travis-ci.org/hbetts/generator-python-library.svg)](https://travis-ci.org/hbetts/generator-python-library)
 
 > Generator for boostrapping a Python library
 
