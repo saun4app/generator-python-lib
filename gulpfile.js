@@ -1,6 +1,7 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp	= require('gulp');
+var gutil	= require('gulp-util');
 
 var paths = {
 	lintFiles: [
@@ -74,7 +75,7 @@ gulp.task('coverage:cobertura', [ 'test:unit' ], function() {
 		return gulp.src(paths.testFiles)
 		.pipe(mocha())
 		.pipe(istanbul.writeReports({
-			reporters: [ 'text' ]
+			reporters: [ 'cobertura' ]
 		}))
 		;
 	})
@@ -86,6 +87,20 @@ gulp.task('coverage:cobertura', [ 'test:unit' ], function() {
  * TODO
  */
 gulp.task('coverage:text', [ 'test:unit' ], function() {
+	var istanbul	= require('gulp-istanbul');
+	var mocha		= require('gulp-mocha');
+
+	return gulp.src(paths.sourceFiles)
+	.pipe(instrumentCode())
+	.on('end', function() {
+		return gulp.src(paths.testFiles)
+		.pipe(mocha())
+		.pipe(istanbul.writeReports({
+			reporters: [ 'text' ]
+		}))
+		;
+	})
+	;
 });
 
 /*
@@ -134,19 +149,13 @@ gulp.task('jshint', function() {
  * Run unit tests.
  */
 gulp.task('test:unit', [ 'clean' ], function() {
-	var istanbul	= require('gulp-istanbul');
-	var mocha		= require('gulp-mocha');
+	var mocha = require('gulp-mocha');
 
-	return gulp.src(paths.sourceFiles)
-	.pipe(instrumentCode())
-	.on('end', function() {
-		return gulp.src(paths.testFiles)
-		.pipe(mocha())
-		.pipe(istanbul.writeReports({
-			reporters: [ 'text' ]
+	return gulp.src(paths.testFiles, { read: false })
+		.pipe(mocha({
+			reporter: 'spec'
 		}))
-		;
-	})
+		.on('error', gutil.log)
 	;
 });
 

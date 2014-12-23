@@ -7,7 +7,7 @@ Fork the repository to your own account.
 Clone the repository to a suitable location on your local machine.
 
 ```bash
-git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.git
+git clone https://github.com/<%= githubName %>/<%= projectName %>.git
 ```
 
 **Note:** This will clone the entire contents of the repository at the HEAD revision.
@@ -39,14 +39,14 @@ Next, run the project's tests.
 
 ## Feature Requests
 
-I'm always looking for suggestions to improve this project. If you have a suggestion for improving an existing feature, or would like to suggest a completely new feature, please file an issue with my [GitHub repository](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/issues).
+I'm always looking for suggestions to improve this project. If you have a suggestion for improving an existing feature, or would like to suggest a completely new feature, please file an issue with my [GitHub repository](https://github.com/<%= githubName %>/<%= projectName %>/issues).
 
 ## Bug Reports
 
-My project isn't always perfect, but I strive to always improve on that work. You may file bug reports on the [GitHub repository](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/issues) site.
+My project isn't always perfect, but I strive to always improve on that work. You may file bug reports on the [GitHub repository](https://github.com/<%= githubName %>/<%= projectName %>/issues) site.
 
 ## Pull Requests
 
 Along with my desire to hear your feedback and suggestions, I'm also interested in accepting direct assistance in the form of new code or documentation.
 
-Please feel free to file merge requests against my [GitHub repository](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/pulls).
+Please feel free to file merge requests against my [GitHub repository](https://github.com/<%= githubName %>/<%= projectName %>/pulls).

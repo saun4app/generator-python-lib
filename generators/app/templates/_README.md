@@ -1,10 +1,8 @@
-# satellites-py
+# <%= projectName %>
 
-[![Build Status](https://travis-ci.org/hbetts/satellites-py.svg?branch=master)](https://travis-ci.org/hbetts/satellites-py)
+[![Build Status](https://travis-ci.org/<%= githubName %>/<%= projectName %>.svg?branch=master)](https://travis-ci.org/<%= githubName %>/<%= projectName %>)
 
 About this project...
-
-* Documentation: projects.hyper-expanse.net/satellites-py
 
 ## Installation
 
@@ -20,7 +18,7 @@ Read [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 
-Copyright 2014 Hutson Betts
+Copyright 2014 <%= fullName %>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

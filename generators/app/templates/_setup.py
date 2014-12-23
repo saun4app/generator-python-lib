@@ -26,19 +26,19 @@ class Tox(TestCommand):
         sys.exit(errno)
 
 setup(
-    description='Satellites',
-    author='Hutson Betts',
+    description='<%= projectName %>',
+    author='<%= fullName %>',
     url='',
     download_url='',
-    author_email='hutson@hyper-expanse.net',
+    author_email='<%= email %>',
     version='1.0.0',
     install_requires=[
     ],
     packages=[
-        'satellites',
+        '<%= projectName %>',
     ],
     scripts=[],
-    name='satellites',
+    name='<%= projectName %>',
     tests_require=[
         'tox>=1.8.0,<2.0.0',
         'virtualenv>=1.11.6,<2.0.0'
