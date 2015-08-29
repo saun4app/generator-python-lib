@@ -12,7 +12,7 @@
   "keywords": [
     "yeoman-generator"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "generators/app/index.js",
   "name": "generator-python-library",
   "repository": "hbetts/generator-python-library",
