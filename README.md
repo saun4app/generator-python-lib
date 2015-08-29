@@ -1,24 +1,23 @@
-# generator-python-library
+# generator-python-lib
 
-[![Build Status](https://travis-ci.org/hbetts/generator-python-library.svg?branch=master)](https://travis-ci.org/hbetts/generator-python-library)
-[![Dependency Status](https://david-dm.org/hbetts/generator-python-library.svg)](https://david-dm.org/hbetts/generator-python-library)
-[![devDependency Status](https://david-dm.org/hbetts/generator-python-library/dev-status.svg)](https://david-dm.org/hbetts/generator-python-library#info=devDependencies)
-[![peerDependency Status](https://david-dm.org/hbetts/generator-python-library/peer-status.svg)](https://david-dm.org/hbetts/generator-python-library#info=peerDependencies)
+[![Build Status](https://travis-ci.org/hbetts/generator-python-lib.svg?branch=master)](https://travis-ci.org/hbetts/generator-python-lib)
+[![Dependency Status](https://david-dm.org/hbetts/generator-python-lib.svg)](https://david-dm.org/hbetts/generator-python-lib)
+[![devDependency Status](https://david-dm.org/hbetts/generator-python-lib/dev-status.svg)](https://david-dm.org/hbetts/generator-python-lib#info=devDependencies)
 
-> Generator for boostrapping a Python library
+> Generator for boostrapping a Python library.
 
 ## Installation
 
 First you'll need the Yeoman CLI tool to run this generator:
 
 ```bash
-npm install -g yo
+npm install --global yo
 ```
 
-To install generator-python-library from npm, run:
+To install generator-python-lib from npm, run:
 
 ```bash
-npm install -g generator-python-library
+npm install --global generator-python-lib
 ```
 
 ## Usage
@@ -26,7 +25,7 @@ npm install -g generator-python-library
 Run the generator:
 
 ```bash
-yo python-library
+yo python-lib
 ```
 
 ## Contributing
@@ -48,4 +47,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
