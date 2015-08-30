@@ -1,6 +1,7 @@
 # generator-python-lib
 
 [![Build Status](https://travis-ci.org/hbetts/generator-python-lib.svg?branch=master)](https://travis-ci.org/hbetts/generator-python-lib)
+[![Coverage Status](https://coveralls.io/repos/hbetts/generator-python-lib/badge.svg?branch=master&service=github)](https://coveralls.io/github/hbetts/generator-python-lib?branch=master)
 [![Dependency Status](https://david-dm.org/hbetts/generator-python-lib.svg)](https://david-dm.org/hbetts/generator-python-lib)
 [![devDependency Status](https://david-dm.org/hbetts/generator-python-lib/dev-status.svg)](https://david-dm.org/hbetts/generator-python-lib#info=devDependencies)
 
