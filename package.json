@@ -18,6 +18,7 @@
   "repository": "hbetts/generator-python-library",
   "scripts": {
     "build": "gulp",
+    "publish-to-coveralls": "cat ./coverage/lcov.info | coveralls",
     "test": "gulp test"
   },
   "version": "0.0.0",
@@ -26,6 +27,7 @@
     "yosay": "^1.0.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.4",
     "del": "^1.2.1",
     "gulp": "^3.4.0",
     "gulp-istanbul": "^0.10.0",

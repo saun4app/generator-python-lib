@@ -59,7 +59,7 @@ gulp.task('test', function(done) {
 					reporter: [ 'dot' ]
 				}))
 				.pipe(istanbul.writeReports({
-					reporters: [ 'text', 'cobertura' ]
+					reporters: [ 'text', 'lcov' ]
 				}))
 				.on('end', done)
 			;
