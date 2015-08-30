@@ -18,8 +18,7 @@
   "repository": "hbetts/generator-python-library",
   "scripts": {
     "build": "gulp",
-    "cobertura": "gulp coverage:cobertura",
-    "test": "gulp test:unit"
+    "test": "gulp test"
   },
   "version": "0.0.0",
   "dependencies": {
