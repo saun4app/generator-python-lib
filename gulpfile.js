@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp	= require('gulp');
-var gutil	= require('gulp-util');
 
 var paths = {
 	lintFiles: [
@@ -19,7 +18,7 @@ var paths = {
 
 	sourceFiles: [
 		'generators/**/*.js',
-		'!generators/**/templates/'
+		'!generators/**/templates/**/*.*'
 	],
 
 	templateFiles: [
@@ -30,24 +29,6 @@ var paths = {
 		'test/**/*.spec.js'
 	]
 };
-
-var instrumentCode = (function() {
-	var istanbul	= require('gulp-istanbul');
-	var lazypipe	= require('lazypipe');
-
-	function tapAllFiles() {
-		var tap			= require('gulp-tap');
-
-		return tap(function(file) {
-			require(file.path);
-		});
-	}
-
-	return lazypipe()
-	.pipe(istanbul)
-	.pipe(tapAllFiles)
-	;
-})();
 
 /*
  * Clean up build directories.
@@ -65,41 +46,24 @@ gulp.task('clean', function(done) {
  * Generator a Cobertura coverage report.
  * TODO
  */
-gulp.task('coverage:cobertura', [ 'test:unit' ], function() {
-	var istanbul	= require('gulp-istanbul');
-	var mocha		= require('gulp-mocha');
+gulp.task('test', function(done) {
+	var istanbul = require('gulp-istanbul');
+	var mocha    = require('gulp-mocha');
 
-	return gulp.src(paths.sourceFiles)
-	.pipe(instrumentCode())
-	.on('end', function() {
-		return gulp.src(paths.testFiles)
-		.pipe(mocha())
-		.pipe(istanbul.writeReports({
-			reporters: [ 'cobertura' ]
-		}))
-		;
-	})
-	;
-});
-
-/*
- * Generate a text-based coverage report.
- * TODO
- */
-gulp.task('coverage:text', [ 'test:unit' ], function() {
-	var istanbul	= require('gulp-istanbul');
-	var mocha		= require('gulp-mocha');
-
-	return gulp.src(paths.sourceFiles)
-	.pipe(instrumentCode())
-	.on('end', function() {
-		return gulp.src(paths.testFiles)
-		.pipe(mocha())
-		.pipe(istanbul.writeReports({
-			reporters: [ 'text' ]
-		}))
-		;
-	})
+	gulp.src(paths.sourceFiles)
+		.pipe(istanbul())
+		.pipe(istanbul.hookRequire())
+		.on('finish', function() {
+			gulp.src(paths.testFiles)
+				.pipe(mocha({
+					reporter: [ 'dot' ]
+				}))
+				.pipe(istanbul.writeReports({
+					reporters: [ 'text', 'cobertura' ]
+				}))
+				.on('end', done)
+			;
+		})
 	;
 });
 
@@ -142,20 +106,6 @@ gulp.task('jshint', function() {
 	.pipe(jshint())
 	.pipe(jshint.reporter('jshint-stylish'))
 	// TODO Fail the build if JSHint errors are encountered.
-	;
-});
-
-/*
- * Run unit tests.
- */
-gulp.task('test:unit', [ 'clean' ], function() {
-	var mocha = require('gulp-mocha');
-
-	return gulp.src(paths.testFiles, { read: false })
-		.pipe(mocha({
-			reporter: 'spec'
-		}))
-		.on('error', gutil.log)
 	;
 });
 
