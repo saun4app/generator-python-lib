@@ -1,5 +1,6 @@
 'use strict';
 
+var _		= require('lodash');
 var yeoman	= require('yeoman-generator');
 var yosay	= require('yosay');
 
@@ -9,7 +10,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 
 		this.option('projectName',
 			{
-				defaults: this.config.get('projectName') || this._.slugify(this.appname),
+				defaults: this.config.get('projectName') || _.kebabCase(this.appname),
 				desc: 'Name of your project.',
 				type: 'string'
 			}
