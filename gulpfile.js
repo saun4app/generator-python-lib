@@ -137,4 +137,4 @@ gulp.task('serve', [ 'default' ], function() {
 /*
  * Run a default build.
  */
-gulp.task('default', [ 'clean', 'jscs', 'jshint', 'test:unit', 'jsdoc' ]);
+gulp.task('default', [ 'clean', 'jscs', 'jshint', 'test', 'jsdoc' ]);
