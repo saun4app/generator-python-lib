@@ -14,7 +14,7 @@
   ],
   "license": "Apache-2.0",
   "main": "generators/app/index.js",
-  "name": "generator-python-library",
+  "name": "generator-python-lib",
   "repository": "hbetts/generator-python-library",
   "scripts": {
     "build": "gulp",
