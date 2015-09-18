@@ -31,8 +31,9 @@ describe('python-library:app', function() {
 	describe('generating', function() {
 
 		beforeEach(function() {
-			runGenerator = helpers.run(path.join(__dirname, '../../../generators/app'))
-			.withPrompt(PROMPTS)
+			runGenerator = helpers
+				.run(path.join(__dirname, '../../../generators/app'))
+				.withPrompts(PROMPTS)
 			;
 		});
 
