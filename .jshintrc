@@ -65,6 +65,7 @@
     "couch"         : false,    // CouchDB
     "devel"         : true,     // Development/debugging (alert, confirm, etc)
     "dojo"          : false,    // Dojo Toolkit
+    "jasmine"       : true,     // Jasmine
     "jquery"        : false,    // jQuery
     "mootools"      : false,    // MooTools
     "node"          : true,     // Node.js
@@ -83,9 +84,5 @@
 
     // Custom Globals
     "globals"       : {
-		"afterEach": false,
-		"beforeEach": false,
-		"describe": false,
-		"it": false
     }        // additional predefined global variables
 }
