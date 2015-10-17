@@ -1,7 +1,7 @@
 # generator-python-lib
 
 [![Build Status](https://snap-ci.com/hbetts/generator-python-lib/branch/master/build_image)](https://snap-ci.com/hbetts/generator-python-lib/branch/master)
-[![Coverage Status](https://coveralls.io/repos/hbetts/generator-python-lib/badge.svg?branch=master&service=github)](https://coveralls.io/github/hbetts/generator-python-lib?branch=master)
+[![codecov.io](https://codecov.io/github/hbetts/generator-python-lib/coverage.svg?branch=master)](https://codecov.io/github/hbetts/generator-python-lib?branch=master)
 [![Dependency Status](https://david-dm.org/hbetts/generator-python-lib.svg)](https://david-dm.org/hbetts/generator-python-lib)
 [![devDependency Status](https://david-dm.org/hbetts/generator-python-lib/dev-status.svg)](https://david-dm.org/hbetts/generator-python-lib#info=devDependencies)
 
