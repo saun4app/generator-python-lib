@@ -24,7 +24,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "gulp"
   },
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
     "lodash": "^3.10.1",
     "yeoman-generator": "^0.20.3",
