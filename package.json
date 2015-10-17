@@ -17,7 +17,7 @@
   "name": "generator-python-lib",
   "repository": "hbetts/generator-python-library",
   "scripts": {
-    "prepublish": "semantic-release pre",
+    "prepublish": "not-in-install && semantic-release pre || in-install",
     "postpublish": "semantic-release post",
     "test": "gulp"
   },
@@ -38,6 +38,7 @@
     "gulp-jshint": "^1.9.0",
     "gulp-mocha": "^2.0.0",
     "gulp-watch": "^4.3.5",
+    "in-publish": "^2.0.0",
     "jshint-stylish": "^2.0.1",
     "semantic-release": "^4.3.5"
   },
