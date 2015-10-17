@@ -134,5 +134,4 @@ gulp.task('serve', [ 'default' ], function() {
 	});
 });
 
-gulp.task('build', [ 'jscs', 'jshint' ]);
-gulp.task('default', [ 'clean', 'build', 'test', 'jsdoc' ]);
+gulp.task('default', [ 'clean', 'jscs', 'jshint', 'test', 'jsdoc' ]);
