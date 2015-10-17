@@ -15,7 +15,10 @@
   "license": "Apache-2.0",
   "main": "generators/app/index.js",
   "name": "generator-python-lib",
-  "repository": "hbetts/generator-python-library",
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/hbetts/generator-python-lib.git"
+	},
   "scripts": {
     "prepublish": "not-in-install && semantic-release pre || in-install",
     "postpublish": "semantic-release post",
