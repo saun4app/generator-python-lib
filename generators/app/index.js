@@ -40,6 +40,14 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 				type: 'string'
 			}
 		);
+
+		this.option('ciProvider',
+			{
+				defaults: this.config.get('ciProvider'),
+				desc: 'CI Provider.',
+				type: String
+			}
+		);
 	},
 
 	initializing: function () {
@@ -89,6 +97,19 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 				validate: function (answer) {
 					return answer.length > 0;
 				}
+			},
+			{
+				default: this.options.ciProvider,
+				choices: [
+					'None',
+					'Travis CI'
+				],
+				message: 'Your CI provider',
+				name: 'ciProvider',
+				type: 'list',
+				validate: function (answer) {
+					return answer >= 0;
+				}
 			}
 		];
 
@@ -105,6 +126,9 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 			this.githubName = answers.githubName;
 			this.config.set('githubName', this.githubName);
 
+			this.ciProvider = answers.ciProvider;
+			this.config.set('ciProvider', this.ciProvider);
+
 			done();
 		}.bind(this));
 	},
@@ -118,10 +142,6 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 			this.fs.copy(
 				this.templatePath('_requirements.txt'),
 				this.destinationPath('requirements.txt')
-			);
-			this.fs.copy(
-				this.templatePath('travis.yml'),
-				this.destinationPath('.travis.yml')
 			);
 			this.fs.copyTpl(
 				this.templatePath('_setup.py'),
@@ -139,6 +159,16 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 					projectName: this.projectName
 				}
 			);
+		},
+
+		ciFiles: function () {
+			this.log(this.ciProvider);
+			if (this.ciProvider === 'Travis CI') {
+				this.fs.copy(
+					this.templatePath('travis.yml'),
+					this.destinationPath('.travis.yml')
+				);
+			}
 		},
 
 		gitFiles: function () {
