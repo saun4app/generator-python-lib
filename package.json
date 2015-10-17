@@ -10,7 +10,9 @@
     "npm": "^2.1.9"
   },
   "keywords": [
+  	"generator",
   	"python",
+  	"yeoman",
     "yeoman-generator"
   ],
   "license": "Apache-2.0",
