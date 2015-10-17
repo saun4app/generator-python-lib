@@ -31,7 +31,6 @@
     "yosay": "^1.0.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
     "cz-conventional-changelog": "^1.1.4",
     "del": "^2.0.2",
     "gulp": "^3.4.0",
