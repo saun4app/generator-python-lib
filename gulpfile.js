@@ -56,7 +56,7 @@ gulp.task('test', function(done) {
 		.on('finish', function() {
 			gulp.src(paths.testFiles)
 				.pipe(mocha({
-					reporter: [ 'dot' ]
+					reporter: [ 'progress' ]
 				}))
 				.pipe(istanbul.writeReports({
 					reporters: [ 'text', 'lcov' ]
@@ -107,13 +107,6 @@ gulp.task('jshint', function() {
 	.pipe(jshint.reporter('jshint-stylish'))
 	// TODO Fail the build if JSHint errors are encountered.
 	;
-});
-
-/*
- * Generate a release of this product.
- * TODO
- */
-gulp.task('release', function() {
 });
 
 /*
