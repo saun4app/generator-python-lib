@@ -10,18 +10,18 @@
     "npm": "^2.1.9"
   },
   "keywords": [
-  	"generator",
-  	"python",
-  	"yeoman",
+    "generator",
+    "python",
+    "yeoman",
     "yeoman-generator"
   ],
   "license": "Apache-2.0",
   "main": "generators/app/index.js",
   "name": "generator-python-lib",
   "repository": {
-  	"type": "git",
-  	"url": "https://github.com/hbetts/generator-python-lib.git"
-	},
+    "type": "git",
+    "url": "https://github.com/hbetts/generator-python-lib.git"
+  },
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "gulp"
@@ -33,7 +33,7 @@
     "yosay": "^1.0.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^1.1.4",
+    "cz-conventional-change": "^1.1.4",
     "del": "^2.0.2",
     "gulp": "^3.4.0",
     "gulp-istanbul": "^0.10.0",
@@ -46,9 +46,9 @@
     "semantic-release": "^4.3.5"
   },
   "czConfig": {
-    "path": "./node_modules/cz-conventional-changelog"
+    "path": "./node_modules/cz-conventional-change"
   },
   "release": {
-  	"verifyConditions": []
-	}
+    "verifyConditions": []
+  }
 }
