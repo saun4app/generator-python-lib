@@ -33,7 +33,7 @@
     "yosay": "^1.0.0"
   },
   "devDependencies": {
-    "cz-conventional-change": "^1.1.4",
+    "cz-conventional-changelog": "^1.1.4",
     "del": "^2.0.2",
     "gulp": "^3.4.0",
     "gulp-istanbul": "^0.10.0",
@@ -46,7 +46,7 @@
     "semantic-release": "^4.3.5"
   },
   "czConfig": {
-    "path": "./node_modules/cz-conventional-change"
+    "path": "./node_modules/cz-conventional-changelog"
   },
   "release": {
     "verifyConditions": []
