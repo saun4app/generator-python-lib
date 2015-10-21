@@ -1,7 +1,4 @@
 /coverage/
-/coverage/**
 /docs/
-/docs/**
 /node_modules/
-/node_modules/**
 npm-debug.log

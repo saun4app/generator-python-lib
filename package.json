@@ -4,10 +4,11 @@
     "email": "hutson@hyper-expanse.net",
     "url": "https://github.com/hbetts"
   },
-  "description": "Yeoman generator",
+  "bugs": "https://github.com/hbetts/generator-python-lib/issues",
+  "description": "Generator for bootstrapping a Python library.",
   "engines": {
-    "node": "^0.12.0",
-    "npm": "^2.1.9"
+    "node": "^4.1.0 || ^0.12.0",
+    "npm": "^3.0.0 || ^2.1.9"
   },
   "keywords": [
     "generator",
@@ -23,6 +24,7 @@
     "url": "https://github.com/hbetts/generator-python-lib.git"
   },
   "scripts": {
+  	"docs": "gulp jsdoc",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "gulp"
   },
