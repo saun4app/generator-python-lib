@@ -83,7 +83,7 @@ gulp.task('jscs', function() {
  * Generate source documentation.
  * TODO
  */
-gulp.task('jsdoc', [ 'clean' ], function() {
+gulp.task('jsdoc', function() {
 	var jsdoc = require('gulp-jsdoc');
 
 	return gulp.src(paths.documentationFiles)
