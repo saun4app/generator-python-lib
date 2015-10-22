@@ -1,45 +1,45 @@
 'use strict';
 
-var gulp	= require('gulp');
+var gulp = require('gulp');
 
 var paths = {
-	lintFiles: [
-		'gulpfile.js',
-		'generators/**/*.js',
-		'!generators/**/templates/*.*',
-		'test/**/*.spec.js'
-	],
+  lintFiles: [
+    'gulpfile.js',
+    'generators/**/*.js',
+    '!generators/**/templates/*.*',
+    'test/**/*.spec.js',
+  ],
 
-	documentationFiles: [
-		'README.md',
-		'generators/**/*.js',
-		'!generators/**/templates/*.*',
-	],
+  documentationFiles: [
+    'README.md',
+    'generators/**/*.js',
+    '!generators/**/templates/*.*',
+  ],
 
-	sourceFiles: [
-		'generators/**/*.js',
-		'!generators/**/templates/**/*.*'
-	],
+  sourceFiles: [
+    'generators/**/*.js',
+    '!generators/**/templates/**/*.*',
+  ],
 
-	templateFiles: [
-		'generators/**/templates/'
-	],
+  templateFiles: [
+    'generators/**/templates/',
+  ],
 
-	testFiles: [
-		'test/**/*.spec.js'
-	]
+  testFiles: [
+    'test/**/*.spec.js',
+  ],
 };
 
 /*
  * Clean up build directories.
  */
 gulp.task('clean', function(done) {
-	var del = require('del');
+  var del = require('del');
 
-	del([
-		'coverage/',
-		'docs/'
-	], done);
+  del([
+    'coverage/',
+    'docs/',
+  ], done);
 });
 
 /*
@@ -47,36 +47,34 @@ gulp.task('clean', function(done) {
  * TODO
  */
 gulp.task('test', function(done) {
-	var istanbul = require('gulp-istanbul');
-	var mocha    = require('gulp-mocha');
+  var istanbul = require('gulp-istanbul');
+  var mocha    = require('gulp-mocha');
 
-	gulp.src(paths.sourceFiles)
-		.pipe(istanbul())
-		.pipe(istanbul.hookRequire())
-		.on('finish', function() {
-			gulp.src(paths.testFiles)
-				.pipe(mocha({
-					reporter: [ 'progress' ]
-				}))
-				.pipe(istanbul.writeReports({
-					reporters: [ 'text', 'lcov' ]
-				}))
-				.on('end', done)
-			;
-		})
-	;
+  gulp.src(paths.sourceFiles)
+    .pipe(istanbul())
+    .pipe(istanbul.hookRequire())
+    .on('finish', function() {
+      gulp.src(paths.testFiles)
+        .pipe(mocha({
+          reporter: ['progress'],
+        }))
+        .pipe(istanbul.writeReports({
+          reporters: ['text', 'lcov'],
+        }))
+        .on('end', done);
+    });
 });
 
 /*
  * Run source files through JSCS style checks.
  */
 gulp.task('jscs', function() {
-	var jscs = require('gulp-jscs');
+  var jscs = require('gulp-jscs');
 
-	return gulp.src(paths.lintFiles)
-	.pipe(jscs())
-	// TODO Fail the build if JSCS errors are encountered.
-	;
+  return gulp.src(paths.lintFiles)
+  .pipe(jscs());
+
+  // TODO Fail the build if JSCS errors are encountered.
 });
 
 /*
@@ -84,29 +82,29 @@ gulp.task('jscs', function() {
  * TODO
  */
 gulp.task('jsdoc', function() {
-	var jsdoc = require('gulp-jsdoc');
+  var jsdoc = require('gulp-jsdoc');
 
-	return gulp.src(paths.documentationFiles)
-	.pipe(jsdoc(
-		'docs/',
-		{
-			path: 'ink-docstrap'
-		}
-	))
-	;
+  return gulp.src(paths.documentationFiles)
+  .pipe(jsdoc(
+    'docs/',
+    {
+      path: 'ink-docstrap',
+    }
+  ))
+  ;
 });
 
 /*
  * Run source files through JSHint lint checks.
  */
 gulp.task('jshint', function() {
-	var jshint	= require('gulp-jshint');
+  var jshint  = require('gulp-jshint');
 
-	return gulp.src(paths.lintFiles)
-	.pipe(jshint())
-	.pipe(jshint.reporter('jshint-stylish'))
-	// TODO Fail the build if JSHint errors are encountered.
-	;
+  return gulp.src(paths.lintFiles)
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'));
+
+  // TODO Fail the build if JSHint errors are encountered.
 });
 
 /*
@@ -114,17 +112,17 @@ gulp.task('jshint', function() {
  * changed file(s).
  * TODO
  */
-gulp.task('serve', [ 'default' ], function() {
-	var watch = require('gulp-watch');
+gulp.task('serve', ['default'], function() {
+  var watch = require('gulp-watch');
 
-	watch(paths.lintFiles, function() {
-		gulp.start('jshint');
-		gulp.start('jscs');
-	});
+  watch(paths.lintFiles, function() {
+    gulp.start('jshint');
+    gulp.start('jscs');
+  });
 
-	watch(paths.templateFiles.concat(paths.sourceFiles).concat(paths.testFiles), function() {
-		gulp.start('test:unit');
-	});
+  watch(paths.templateFiles.concat(paths.sourceFiles).concat(paths.testFiles), function() {
+    gulp.start('test:unit');
+  });
 });
 
-gulp.task('default', [ 'clean', 'jscs', 'jshint', 'test', 'jsdoc' ]);
+gulp.task('default', ['clean', 'jscs', 'jshint', 'test', 'jsdoc']);
