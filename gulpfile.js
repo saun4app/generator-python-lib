@@ -6,18 +6,20 @@ var paths = {
   lintFiles: [
     'gulpfile.js',
     'generators/**/*.js',
+    '!generators/**/*.spec.js',
     '!generators/**/templates/*.*',
-    'test/**/*.spec.js',
   ],
 
   documentationFiles: [
     'README.md',
     'generators/**/*.js',
+    '!generators/**/*.spec.js',
     '!generators/**/templates/*.*',
   ],
 
   sourceFiles: [
     'generators/**/*.js',
+    '!generators/**/*.spec.js',
     '!generators/**/templates/**/*.*',
   ],
 
@@ -26,7 +28,7 @@ var paths = {
   ],
 
   testFiles: [
-    'test/**/*.spec.js',
+    'generators/**/*.spec.js',
   ],
 };
 
@@ -51,7 +53,7 @@ gulp.task('test', function(done) {
   var mocha    = require('gulp-mocha');
 
   gulp.src(paths.sourceFiles)
-    .pipe(istanbul())
+    .pipe(istanbul({ includeUntested: true }))
     .pipe(istanbul.hookRequire())
     .on('finish', function() {
       gulp.src(paths.testFiles)
