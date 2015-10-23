@@ -24,14 +24,14 @@
     "url": "https://github.com/hbetts/generator-python-lib.git"
   },
   "scripts": {
-  	"docs": "gulp jsdoc",
+    "docs": "gulp jsdoc",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "gulp"
   },
   "version": "1.0.0",
   "dependencies": {
     "lodash": "^3.10.1",
-    "yeoman-generator": "^0.20.3",
+    "yeoman-generator": "^0.21.1",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
