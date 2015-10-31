@@ -52,6 +52,10 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 
 	initializing: function () {
 		this.pkg = require('../../package.json');
+
+		var updateNotifier = require('update-notifier');
+
+		updateNotifier({ pkg: this.pkg }).notify();
 	},
 
 	prompting: function () {
