@@ -134,6 +134,21 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 	},
 
 	writing: {
+		licenseFiles: function () {
+			this.composeWith(
+				'license',
+				{
+					options: {
+						name: this.fullName,
+						email: this.email
+					}
+				},
+				{
+					local: require.resolve('generator-license')
+				}
+			);
+		},
+
 		buildFiles: function () {
 			this.fs.copy(
 				this.templatePath('_requirements-dev.txt'),

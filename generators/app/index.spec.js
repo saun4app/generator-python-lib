@@ -5,7 +5,11 @@ var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 
 var PROMPTS = {
-  projectName: 'test'
+  projectName: 'test',
+  name: 'Full Name',
+  email: 'name@example.com',
+  website: 'www.example.com',
+  license: 'Apache-2.0'
 };
 
 var EXPECTED_FILES = [
