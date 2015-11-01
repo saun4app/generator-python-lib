@@ -74,9 +74,10 @@ gulp.task('jscs', function() {
   var jscs = require('gulp-jscs');
 
   return gulp.src(paths.lintFiles)
-  .pipe(jscs());
-
-  // TODO Fail the build if JSCS errors are encountered.
+    .pipe(jscs())
+    .pipe(jscs.reporter())
+    .pipe(jscs.reporter('fail'))
+  ;
 });
 
 /*
@@ -103,10 +104,10 @@ gulp.task('jshint', function() {
   var jshint  = require('gulp-jshint');
 
   return gulp.src(paths.lintFiles)
-  .pipe(jshint())
-  .pipe(jshint.reporter('jshint-stylish'));
-
-  // TODO Fail the build if JSHint errors are encountered.
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'))
+  ;
 });
 
 /*
