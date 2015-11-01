@@ -79,27 +79,21 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
         message: 'Your full name',
         name: 'fullName',
         type: 'input',
-        validate: function(answer) {
-          return answer.length > 0;
-        },
+        validate: validators.validateFullName,
       },
       {
         default: this.options.email,
         message: 'Your e-mail address',
         name: 'email',
         type: 'input',
-        validate: function(answer) {
-          return answer.length > 0;
-        },
+        validate: validators.validateEmail,
       },
       {
         default: this.options.githubName,
         message: 'Your GitHub username',
         name: 'githubName',
         type: 'input',
-        validate: function(answer) {
-          return answer.length > 0;
-        },
+        validate: validators.validateGithubName,
       },
       {
         default: this.options.ciProvider,
@@ -110,9 +104,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
         message: 'Your CI provider',
         name: 'ciProvider',
         type: 'list',
-        validate: function(answer) {
-          return answer >= 0;
-        },
+        validate: validators.validateCIProvider,
       },
     ];
 
