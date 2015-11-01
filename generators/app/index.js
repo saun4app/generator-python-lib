@@ -3,6 +3,7 @@
 var _		= require('lodash');
 var yeoman	= require('yeoman-generator');
 var yosay	= require('yosay');
+var validators = require('./validators');
 
 var PythonLibraryGenerator = yeoman.generators.Base.extend({
 	constructor: function () {
@@ -71,9 +72,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 				message: 'Name of your project',
 				name: 'projectName',
 				type: 'input',
-				validate: function (answer) {
-					return answer.length > 0;
-				}
+				validate: validators.validateProjectName
 			},
 			{
 				default: this.options.fullName,
