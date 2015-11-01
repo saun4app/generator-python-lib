@@ -9,7 +9,7 @@ var PROMPTS = {
   name: 'Full Name',
   email: 'name@example.com',
   website: 'www.example.com',
-  license: 'Apache-2.0'
+  license: 'Apache-2.0',
 };
 
 var EXPECTED_FILES = [
@@ -18,7 +18,7 @@ var EXPECTED_FILES = [
   'CONTRIBUTING.md',
   'README.md',
   'setup.py',
-  'tox.ini'
+  'tox.ini',
 ];
 
 describe('python-library:app', function() {
@@ -43,6 +43,22 @@ describe('python-library:app', function() {
     it('creates files', function(done) {
       runGenerator.on('end', function() {
         assert.file(EXPECTED_FILES);
+
+        assert.noFile([
+          '.travis.yml',
+        ]);
+
+        done();
+      });
+    });
+
+    it('creates travis CI file', function(done) {
+      runGenerator.withPrompts({ ciProvider: 1 }).on('end', function() {
+        assert.file(EXPECTED_FILES);
+
+        assert.file([
+          '.travis.yml',
+        ]);
 
         done();
       });

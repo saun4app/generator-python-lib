@@ -22,7 +22,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
       {
         defaults: this.config.get('fullName'),
         desc: 'Your full name.',
-        type: 'string',
+        type: String,
       }
     );
 
@@ -30,7 +30,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
       {
         defaults: this.config.get('email'),
         desc: 'Your e-mail address.',
-        type: 'string',
+        type: String,
       }
     );
 
@@ -38,7 +38,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
       {
         defaults: this.config.get('githubName'),
         desc: 'Your GitHub username.',
-        type: 'string',
+        type: String,
       }
     );
 
@@ -46,7 +46,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
       {
         defaults: this.config.get('ciProvider'),
         desc: 'CI Provider.',
-        type: String,
+        type: Number,
       }
     );
   },
@@ -96,7 +96,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
         validate: validators.validateGithubName,
       },
       {
-        default: this.options.ciProvider,
+        default: this.options.ciProvider || 0,
         choices: [
           'None',
           'Travis CI',
@@ -173,7 +173,7 @@ var PythonLibraryGenerator = yeoman.generators.Base.extend({
 
     ciFiles: function() {
       this.log(this.ciProvider);
-      if (this.ciProvider === 'Travis CI') {
+      if (this.ciProvider === 1) {
         this.fs.copy(
           this.templatePath('travis.yml'),
           this.destinationPath('.travis.yml')
