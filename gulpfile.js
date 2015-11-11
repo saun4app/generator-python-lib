@@ -35,13 +35,13 @@ var paths = {
 /*
  * Clean up build directories.
  */
-gulp.task('clean', function(done) {
+gulp.task('clean', function() {
   var del = require('del');
 
-  del([
+  return del([
     'coverage/',
     'docs/',
-  ], done);
+  ]);
 });
 
 /*
