@@ -48,7 +48,7 @@ gulp.task('clean', function() {
  * Generator a Cobertura coverage report.
  * TODO
  */
-gulp.task('test', function(done) {
+gulp.task('test', ['clean'], function(done) {
   var istanbul = require('gulp-istanbul');
   var mocha    = require('gulp-mocha');
 
@@ -84,7 +84,7 @@ gulp.task('jscs', function() {
  * Generate source documentation.
  * TODO
  */
-gulp.task('jsdoc', function() {
+gulp.task('jsdoc', ['clean'], function() {
   var jsdoc = require('gulp-jsdoc');
 
   return gulp.src(paths.documentationFiles)
@@ -128,4 +128,4 @@ gulp.task('serve', ['default'], function() {
   });
 });
 
-gulp.task('default', ['clean', 'jscs', 'jshint', 'test', 'jsdoc']);
+gulp.task('default', ['jscs', 'jshint', 'test', 'jsdoc']);
