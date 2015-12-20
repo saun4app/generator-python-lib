@@ -84,16 +84,11 @@ gulp.task('jscs', function() {
  * Generate source documentation.
  * TODO
  */
-gulp.task('jsdoc', ['clean'], function() {
-  var jsdoc = require('gulp-jsdoc');
+gulp.task('docs', ['clean'], function(done) {
+  var jsdoc = require('gulp-jsdoc3');
 
-  return gulp.src(paths.documentationFiles)
-  .pipe(jsdoc(
-    'docs/',
-    {
-      path: 'ink-docstrap',
-    }
-  ))
+  gulp.src(paths.documentationFiles, { read: false })
+    .pipe(jsdoc(JSON.parse(require('fs').readFileSync('./.jsdocrc')), done))
   ;
 });
 
@@ -128,4 +123,4 @@ gulp.task('serve', ['default'], function() {
   });
 });
 
-gulp.task('default', ['jscs', 'jshint', 'test', 'jsdoc']);
+gulp.task('default', ['jscs', 'jshint', 'test', 'docs']);

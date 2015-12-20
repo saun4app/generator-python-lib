@@ -36,7 +36,7 @@
     "url": "https://github.com/hbetts/generator-python-lib.git"
   },
   "scripts": {
-    "docs": "gulp jsdoc",
+    "docs": "gulp docs",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "gulp"
   },
@@ -56,11 +56,10 @@
     "gulp": "^3.4.0",
     "gulp-istanbul": "^0.10.0",
     "gulp-jscs": "^3.0.0",
-    "gulp-jsdoc": "^0.1.4",
+    "gulp-jsdoc3": "0.0.3",
     "gulp-jshint": "^2.0.0",
     "gulp-mocha": "^2.0.0",
     "gulp-watch": "^4.3.5",
-    "jsdoc": "^3.3.3",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
     "semantic-release": "^4.3.5"

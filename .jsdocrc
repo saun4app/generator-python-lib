@@ -1,2 +1,21 @@
 {
+	"opts": {
+		"destination": "./docs/",
+		"recurse": true
+	},
+	"source": {
+		"includePattern": "generators/app/.*js"
+	},
+	"tags": {
+		"allowUnknownTags": false
+	},
+	"templates": {
+		"collapseSymbols": true,
+		"includeDate": false,
+		"linenums": true,
+		"outputSourceFiles": true,
+		"syntaxTheme": "dark",
+		"systemName": "generator-python-lib",
+		"theme": "slate"
+	}
 }
