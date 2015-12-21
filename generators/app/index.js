@@ -5,9 +5,9 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var validators = require('./validators');
 
-var PythonLibraryGenerator = yeoman.generators.Base.extend({
+var PythonLibraryGenerator = yeoman.Base.extend({
   constructor: function() {
-    yeoman.generators.Base.apply(this, arguments);
+    yeoman.Base.apply(this, arguments);
 
     this.option('projectName',
       {

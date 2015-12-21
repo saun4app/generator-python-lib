@@ -45,7 +45,7 @@
     "generator-license": "^3.0.0",
     "lodash": "^3.10.1",
     "update-notifier": "^0.6.0",
-    "yeoman-generator": "^0.21.1",
+    "yeoman-generator": "^0.22.1",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
@@ -62,6 +62,8 @@
     "gulp-watch": "^4.3.5",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "yeoman-assert": "^2.1.1",
+    "yeoman-test": "^1.0.0"
   }
 }
