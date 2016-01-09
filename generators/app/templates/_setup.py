@@ -13,11 +13,6 @@ class Tox(TestCommand):
     """
     user_options = [('tox-args=', 'a', 'Arguments to pass to tox.')]
 
-    def __init__(self):
-        self.test_args = []
-        self.test_suite = True
-        TestCommand.__init__()
-
     def initialize_options(self):
         TestCommand.initialize_options(self)
         self.tox_args = ''

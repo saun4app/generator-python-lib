@@ -193,9 +193,22 @@ var PythonLibraryGenerator = yeoman.Base.extend({
     },
 
     libraryFiles: function() {
+      var path = require('path');
+
       this.fs.write(
         this.destinationPath(this.projectName + '/__init__.py'),
         ''
+      );
+      this.fs.copy(
+        this.templatePath('pkg/_utils.py'),
+        this.destinationPath(path.join(this.projectName, 'utils.py'))
+      );
+      this.fs.copyTpl(
+        this.templatePath('tests/_test_utils.py'),
+        this.destinationPath('tests/test_utils.py'),
+        {
+          projectName: this.projectName,
+        }
       );
     },
 

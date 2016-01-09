@@ -1,8 +1,5 @@
 /.tox/
-/.tox/**
 /venv/
-/venv/**
 __pycache__/
-__pycache__/**
 *.egg*
 *.pyc
