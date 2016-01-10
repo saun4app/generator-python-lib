@@ -1,5 +1,4 @@
 language: python
-cache: pip
 env:
     - TOXENV=py33
     - TOXENV=py34
@@ -8,7 +7,7 @@ env:
     - TOXENV=lint
     - TOXENV=pep8
 install:
-    - pip install --user -r requirements-dev.txt
+    - pip install -r requirements-dev.txt
 matrix:
   fast_finish: true
 script:
