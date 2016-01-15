@@ -24,10 +24,11 @@ var EXPECTED_FILES = [
 describe('python-library:app', function() {
   var runGenerator;
 
+  this.timeout(500000);
   describe('basic', function() {
 
     it('should load via require without crashing', function() {
-      assert(require(path.join(__dirname, './')) !== undefined);
+      assert(require(path.join(__dirname)) !== undefined);
     });
   });
 
@@ -35,7 +36,7 @@ describe('python-library:app', function() {
 
     beforeEach(function() {
       runGenerator = helpers
-        .run(path.join(__dirname, './'))
+        .run(path.join(__dirname))
         .withPrompts(PROMPTS)
       ;
     });
