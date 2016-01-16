@@ -1,6 +1,5 @@
 'use strict';
 
-var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
@@ -22,21 +21,20 @@ var EXPECTED_FILES = [
 ];
 
 describe('python-library:app', function() {
-  var runGenerator;
 
-  this.timeout(500000);
   describe('basic', function() {
 
     it('should load via require without crashing', function() {
-      assert(require(path.join(__dirname)) !== undefined);
+      assert(require(__dirname) !== undefined);
     });
   });
 
   describe('generating', function() {
+    var runGenerator;
 
     beforeEach(function() {
       runGenerator = helpers
-        .run(path.join(__dirname))
+        .run(__dirname)
         .withPrompts(PROMPTS)
       ;
     });
