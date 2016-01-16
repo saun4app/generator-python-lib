@@ -97,7 +97,6 @@ gulp.task('jscs', function() {
 gulp.task('docs', ['clean:docs'], function(done) {
   var jsdoc = require('gulp-jsdoc3');
 
-  console.log('directory', process.cwd());
   gulp.src(paths.documentationFiles, { read: false })
     .pipe(jsdoc(JSON.parse(require('fs').readFileSync('./.jsdocrc'))), done)
   ;
