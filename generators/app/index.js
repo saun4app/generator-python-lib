@@ -6,7 +6,7 @@ var yosay = require('yosay');
 var validators = require('./validators');
 
 var PythonLibraryGenerator = yeoman.Base.extend({
-  constructor: function() {
+  constructor: function () {
     yeoman.Base.apply(this, arguments);
 
     this.option('projectName',
@@ -51,7 +51,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
     );
   },
 
-  initializing: function() {
+  initializing: function () {
     this.pkg = require('../../package.json');
 
     var updateNotifier = require('update-notifier');
@@ -59,7 +59,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
     updateNotifier({ pkg: this.pkg }).notify();
   },
 
-  prompting: function() {
+  prompting: function () {
     var done = this.async();
 
     this.log(yosay(
@@ -108,7 +108,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       },
     ];
 
-    this.prompt(prompts, function(answers) {
+    this.prompt(prompts, function (answers) {
       this.projectName = answers.projectName;
       this.config.set('projectName', this.projectName);
 
@@ -129,7 +129,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
   },
 
   writing: {
-    licenseFiles: function() {
+    licenseFiles: function () {
       this.composeWith(
         'license',
         {
@@ -144,7 +144,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       );
     },
 
-    buildFiles: function() {
+    buildFiles: function () {
       this.fs.copy(
         this.templatePath('_requirements-dev.txt'),
         this.destinationPath('requirements-dev.txt')
@@ -171,7 +171,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       );
     },
 
-    ciFiles: function() {
+    ciFiles: function () {
       this.log(this.ciProvider);
       if (this.ciProvider === 1) {
         this.fs.copy(
@@ -181,7 +181,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       }
     },
 
-    gitFiles: function() {
+    gitFiles: function () {
       this.fs.copy(
         this.templatePath('gitattributes'),
         this.destinationPath('.gitattributes')
@@ -192,7 +192,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       );
     },
 
-    libraryFiles: function() {
+    libraryFiles: function () {
       var path = require('path');
 
       this.fs.write(
@@ -212,7 +212,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       );
     },
 
-    projectFiles: function() {
+    projectFiles: function () {
       this.fs.copyTpl(
         this.templatePath('_CONTRIBUTING.md'),
         this.destinationPath('CONTRIBUTING.md'),
@@ -236,19 +236,19 @@ var PythonLibraryGenerator = yeoman.Base.extend({
       );
     },
 
-    testFiles: function() {
+    testFiles: function () {
       this.fs.write(
         this.destinationPath('tests/__init__.py'),
         ''
       );
     },
 
-    configurationFile: function() {
+    configurationFile: function () {
       this.config.set('version', this.pkg.version);
     },
   },
 
-  end: function() {
+  end: function () {
   },
 });
 
