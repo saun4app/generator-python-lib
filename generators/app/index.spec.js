@@ -32,6 +32,11 @@ describe('python-library:app', function () {
   describe('generating', function () {
     var runGenerator;
 
+    // Because this test suite runs the actual generator, its runtime is dependent on the underlying file system.
+    // If writes are slow then the tests will timeout. Therefore we must arbitrarily increase the default Mocha
+    // timeout applied to test cases.
+    this.timeout(10000);
+
     beforeEach(function () {
       runGenerator = helpers
         .run(__dirname)
