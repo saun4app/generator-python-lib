@@ -221,10 +221,6 @@ var PythonLibraryGenerator = yeoman.Base.extend({
           projectName: this.projectName,
         }
       );
-      this.fs.copy(
-        this.templatePath('_LICENSE'),
-        this.destinationPath('LICENSE')
-      );
       this.fs.copyTpl(
         this.templatePath('_README.md'),
         this.destinationPath('README.md'),
