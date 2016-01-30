@@ -46,6 +46,36 @@ yo python-lib
 
 You will be prompted for input that will be used to bootstrap your project. Keep in mind that your responses, and the resulting file contents, can be changed at a later date by re-running the generator.
 
+Once your Python library has been scaffolded create a virtual environment:
+
+```bash
+virtualenv --python=python3 venv
+```
+
+Next you'll need to activate the virtual environment by sourcing the `activate` script created within the virtual environment directory:
+
+```bash
+source ./venv/bin/activate
+```
+
+Now your shell environment is configured to expose all tools and libraries installed within the virtual environment. For example, to install the required development tools, run the following:
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+This installs, among other things, `tox`, which can run your library's unit tests against all versions of Python installed on your system. To run `tox`, and the library's unit tests, run the following:
+
+```bash
+python setup.py test
+```
+
+For a full list of tasks available through `setup.py` run:
+
+```bash
+python setup.py --help-commands
+```
+
 ## Contributing
 
 Read [CONTRIBUTING](CONTRIBUTING.md).
