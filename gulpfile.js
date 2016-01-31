@@ -119,13 +119,21 @@ gulp.task('jshint', function () {
  * Watch for file changes to either source, or test, files, and execute the appropriate task(s) associated with the
  * changed file(s).
  */
-gulp.task('watch', function () {
-  gulp.watch(paths.lintFiles, ['jshint', 'jscs']);
-  gulp.watch(
-    paths.templateFiles.concat(paths.sourceFiles).concat(paths.testFiles),
-    ['test']
-  );
-  gulp.watch(paths.documentationFiles, ['docs']);
+gulp.task('serve', ['default'], function () {
+  var watch = require('gulp-watch');
+
+  watch(paths.documentationFiles, function () {
+    gulp.start('docs');
+  });
+
+  watch(paths.lintFiles, function () {
+    gulp.start('jshint');
+    gulp.start('jscs');
+  });
+
+  watch(paths.sourceFiles.concat(paths.testFiles), function () {
+    gulp.start('test');
+  });
 });
 
 gulp.task('default', ['jscs', 'jshint', 'test', 'docs']);

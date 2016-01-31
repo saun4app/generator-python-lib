@@ -19,6 +19,7 @@
   "files": [
     "generators/"
   ],
+  "homepage": "https://github.com/hbetts/generator-python-lib#readme",
   "keywords": [
     "generator",
     "python",
@@ -28,9 +29,6 @@
   "license": "Apache-2.0",
   "main": "generators/app/index.js",
   "name": "generator-python-lib",
-  "release": {
-    "verifyConditions": []
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hbetts/generator-python-lib.git"
@@ -59,6 +57,7 @@
     "gulp-jsdoc3": "^0.1.0",
     "gulp-jshint": "^2.0.0",
     "gulp-mocha": "^2.0.0",
+    "gulp-watch": "^4.3.5",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
     "semantic-release": "^4.3.5",
