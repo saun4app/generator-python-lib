@@ -12,6 +12,7 @@
 
 ## Features
 
+* [&#x2713;] Bootstrap [Tox](https://tox.readthedocs.org/en/latest/index.html) configuration file [tox.ini](https://tox.readthedocs.org/en/latest/config.html) to support executing tests against multiple Python interpretors.
 * [&#x2713;] Bootstrap Git configuration files, [.gitattributes](https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html) and [.gitignore](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html).
 * [&#x2713;] Bootstrap CONTRIBUTING.md file.
 * [&#x2713;] Bootstrap [README.md](https://en.wikipedia.org/wiki/README) file.

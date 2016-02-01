@@ -145,6 +145,13 @@ var PythonLibraryGenerator = yeoman.Base.extend({
     },
 
     buildFiles: function () {
+      this.fs.copyTpl(
+        this.templatePath('coveragerc'),
+        this.destinationPath('.coveragerc'),
+        {
+          projectName: this.projectName,
+        }
+      );
       this.fs.copy(
         this.templatePath('_requirements-dev.txt'),
         this.destinationPath('requirements-dev.txt')
