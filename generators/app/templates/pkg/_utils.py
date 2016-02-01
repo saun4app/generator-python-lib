@@ -41,6 +41,8 @@ def orbital_speed(planet, planatary_radius, altitude):
 
 def circumference(radius):
     """
+    Calculate the circumference of an object.
+
     2*pi*r
 
     >>> from math import *
@@ -55,6 +57,7 @@ def circumference(radius):
 def orbital_period(planet, planatary_radius, altitude):
     """
     Calculate the orbital period of an object.
+
     d = v*t
 
     >>> from math import *
