@@ -180,8 +180,7 @@ var PythonLibraryGenerator = yeoman.Base.extend({
     },
 
     ciFiles: function () {
-      this.log(this.ciProvider);
-      if (this.ciProvider === 1) {
+      if (this.ciProvider === 'Travis CI') {
         this.fs.copy(
           this.templatePath('travis.yml'),
           this.destinationPath('.travis.yml')

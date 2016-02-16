@@ -57,7 +57,7 @@ describe('python-library:app', function () {
     });
 
     it('creates travis CI file', function (done) {
-      runGenerator.withPrompts({ ciProvider: 1 }).on('end', function () {
+      runGenerator.withPrompts({ ciProvider: 'Travis CI' }).on('end', function () {
         assert.file(EXPECTED_FILES);
 
         assert.file([

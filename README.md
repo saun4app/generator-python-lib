@@ -141,7 +141,7 @@ Your GitHub username.
 ### ciProvider
 **Default:** _Previously defined value in .yo-rc.json file or UNDEFINED_
 
-Continuous Integration provider, such as Travis-CI (option value of 1).
+Continuous Integration provider, such as Travis CI (option value of `Travis CI`).
 
 ## Contributing
 

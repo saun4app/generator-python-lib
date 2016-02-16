@@ -116,8 +116,8 @@ gulp.task('jshint', function () {
 });
 
 /*
- * Watch for file changes to either source, or test, files, and execute the appropriate task(s) associated with the
- * changed file(s).
+ * Watch for file changes to either source, or test, files, and execute the appropriate task(s)
+ * associated with the changed file(s).
  */
 gulp.task('serve', ['default'], function () {
   var watch = require('gulp-watch');
