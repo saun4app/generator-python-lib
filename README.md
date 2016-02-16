@@ -77,6 +77,72 @@ For a full list of tasks available through `setup.py` run:
 python setup.py --help-commands
 ```
 
+## Composability
+
+`generator-python-lib` may be integrated into other Yeoman generators through Yeoman's [composability](http://yeoman.io/authoring/composability.html) feature.
+
+First off you will need to add `generator-python-lib` to your generator's `dependencies`:
+
+```bash
+npm install generator-python-lib --save
+```
+
+To invoke `generator-python-lib` add the following code to any method in your generator:
+
+```javascript
+this.composeWith('python-lib', {
+    options: {}
+});
+```
+
+If passing options to the generator:
+
+```javascript
+this.composeWith('python-lib', {
+    options: {
+        'skip-welcome-message': true
+    }
+});
+```
+
+## Options
+
+`generator-python-lib` supports several options; their default values are listed below.
+
+Options may be provided on the command line, such as passing `--projectName=my-project-name` when calling `generator-python-lib` directly, or via the options argument passed to `composeWith`.
+
+When the value for an option is fetched from the working directory's `.yo-rc.json` file, or passed as a command line argument, this yeoman generator will **not** prompt you for the value.
+
+### skip-welcome-message
+**Default:** _UNDEFINED_
+
+Should the generator's welcome message be skipped (suppressed)?
+
+### projectName
+**Default:** _[Name of project folder]_
+
+Used as the module name for your Python library,
+
+### fullName
+**Default:** _Previously defined value in .yo-rc.json file or UNDEFINED_
+
+Your full name.
+
+### email
+**Default:** _Previously defined value in .yo-rc.json file or UNDEFINED_
+
+Contact e-mail for those trying to reach you as the author of the library.
+
+### githubName
+**Default:** _Previously defined value in .yo-rc.json file or UNDEFINED_
+
+Your GitHub username.
+
+### ciProvider
+**Default:** _Previously defined value in .yo-rc.json file or UNDEFINED_
+
+Continuous Integration provider, such as Travis-CI (option value of 1).
+
 ## Contributing
 
 Read [CONTRIBUTING](CONTRIBUTING.md).

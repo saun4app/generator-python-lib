@@ -2,7 +2,6 @@
 
 var _ = require('lodash');
 var yeoman = require('yeoman-generator');
-var yosay = require('yosay');
 var validators = require('./validators');
 
 var PythonLibraryGenerator = yeoman.Base.extend({
@@ -62,9 +61,11 @@ var PythonLibraryGenerator = yeoman.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    this.log(yosay(
-      'Welcome to the python library generator!'
-    ));
+    if (!this.options['skip-welcome-message']) {
+      this.log(require('yosay')(
+        'Welcome to the python library generator!'
+      ));
+    }
 
     var prompts = [
       {
