@@ -14,6 +14,7 @@ var PROMPTS = {
 var EXPECTED_FILES = [
   '.gitattributes',
   '.gitignore',
+  '.pylintrc',
   'CONTRIBUTING.md',
   'README.md',
   'setup.py',

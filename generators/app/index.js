@@ -154,6 +154,10 @@ var PythonLibraryGenerator = yeoman.Base.extend({
         }
       );
       this.fs.copy(
+        this.templatePath('pylintrc'),
+        this.destinationPath('.pylintrc')
+      );
+      this.fs.copy(
         this.templatePath('_requirements-dev.txt'),
         this.destinationPath('requirements-dev.txt')
       );
