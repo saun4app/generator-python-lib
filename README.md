@@ -6,7 +6,7 @@
 [![devDependency Status](https://david-dm.org/hbetts/generator-python-lib/dev-status.svg)](https://david-dm.org/hbetts/generator-python-lib#info=devDependencies)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-> Generator for boostrapping a Python library.
+> Generator for bootstrapping a Python library.
 
 `generator-python-lib` scaffolds a basic Python library, with a build, and example source files, using your responses to a series of command line prompts.
 
