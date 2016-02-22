@@ -12,6 +12,7 @@
 
 ## Features
 
+* [&#x2713;] Bootstrap Python 3 compatible library.
 * [&#x2713;] Bootstrap [Tox](https://tox.readthedocs.org/en/latest/index.html) configuration file [tox.ini](https://tox.readthedocs.org/en/latest/config.html) to support executing tests against multiple Python interpretors.
 * [&#x2713;] Bootstrap [Pylint](https://www.pylint.org/) configuration file `.pylintrc` for checking code quality.
 * [&#x2713;] Bootstrap Git configuration files, [.gitattributes](https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html) and [.gitignore](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html).
