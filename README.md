@@ -28,15 +28,17 @@ To install `generator-python-lib` from the npm registry run:
 npm install --global generator-python-lib
 ```
 
-## Usage
-
 Make sure you have the Yeoman CLI tool, `yo`, installed globally. You can install Yeoman via the following command:
 
 ```bash
 npm install --global yo
 ```
 
-Now create a new directory to host your project and navigate into it:
+You will also need to have [pip](https://pip.pypa.io/en/stable/installing/) and [virtualenv](http://virtualenv.readthedocs.org/en/latest/installation.html) installed to work with your scaffolded Python library.
+
+## Usage
+
+Create a new directory to host your project and navigate into it:
 
 ```bash
 mkdir my-new-lib && cd $_
