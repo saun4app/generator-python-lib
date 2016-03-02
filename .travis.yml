@@ -17,8 +17,9 @@ env:
 matrix:
   fast_finish: true
 node_js:
+  - "0.10"
   - "0.12"
-  - "4.2"
+  - "4"
 before_install:
   - npm install --global npm@${NPM_VERSION}
 after_success:
