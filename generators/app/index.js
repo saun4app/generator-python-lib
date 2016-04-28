@@ -181,6 +181,10 @@ var PythonLibraryGenerator = yeoman.Base.extend({
           projectName: this.projectName,
         }
       );
+      this.fs.copy(
+        this.templatePath('_setup.cfg'),
+        this.destinationPath('setup.cfg')
+      );
     },
 
     ciFiles: function () {
